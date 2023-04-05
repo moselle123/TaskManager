@@ -52,7 +52,6 @@ function updateTime() {
     // Update the content of the heading tag
     document.getElementById("currentTime").innerHTML = timeString;
     document.getElementById("currentDate").innerHTML = now.toDateString();
-    console.log(timeString);
   }
   
   // Call updateTime every second to update the time
