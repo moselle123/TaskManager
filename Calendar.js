@@ -37,23 +37,7 @@ const months = [
   "December",
 ];
 
-const eventsArr = [
-  {
-    day: 13,
-    month: 04,
-    year: 2023,
-    events: [
-      {
-        title: "Event 1",
-        time: "10:00 AM",
-      },
-      {
-        title: "Event 2",
-        time: "11:00 AM",
-      },
-    ],
-  },
-];
+const eventsArr = [];
 
 
 getEvents();
@@ -141,7 +125,7 @@ next.addEventListener("click", nextMonth);
 
 initCalendar();
 
-//function to add active on day
+// function to add active on day
 function addListner() {
   const days = document.querySelectorAll(".day");
   days.forEach((day) => {
@@ -171,7 +155,7 @@ function addListner() {
         }, 100);
       } else if (e.target.classList.contains("next-date")) {
         nextMonth();
-        //add active to clicked day afte month is changed
+        //add active to clicked day after month is changed
         setTimeout(() => {
           const days = document.querySelectorAll(".day");
           days.forEach((day) => {
@@ -189,13 +173,6 @@ function addListner() {
     });
   });
 }
-
-todayBtn.addEventListener("click", () => {
-  today = new Date();
-  month = today.getMonth();
-  year = today.getFullYear();
-  initCalendar();
-});
 
 dateInput.addEventListener("input", (e) => {
   dateInput.value = dateInput.value.replace(/[^0-9/]/g, "");
@@ -235,7 +212,7 @@ function getActiveDay(date) {
   eventDay.innerHTML = dayName;
   eventDate.innerHTML = date + " " + months[month] + " " + year;
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 //function update events when a day is active
 function updateEvents(date) {
   let events = "";
@@ -248,7 +225,6 @@ function updateEvents(date) {
       event.events.forEach((event) => {
         events += `<div class="event">
             <div class="title">
-              <i class="fas fa-circle"></i>
               <h3 class="event-title">${event.title}</h3>
             </div>
             <div class="event-time">
@@ -287,26 +263,6 @@ addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
 
-function defineProperty() {
-  var osccred = document.createElement("div");
-  osccred.innerHTML =
-    "A Project By <a href='https://www.youtube.com/channel/UCiUtBDVaSmMGKxg1HYeK-BQ' target=_blank>Open Source Coding</a>";
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
-  osccred.style.color = "#ccc";
-  osccred.style.fontFamily = "sans-serif";
-  osccred.style.padding = "5px";
-  osccred.style.background = "#fff";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px #ccc";
-  document.body.appendChild(osccred);
-}
-
-defineProperty();
-
 //allow only time in eventtime from and to
 addEventFrom.addEventListener("input", (e) => {
   addEventFrom.value = addEventFrom.value.replace(/[^0-9:]/g, "");
@@ -327,7 +283,7 @@ addEventTo.addEventListener("input", (e) => {
     addEventTo.value = addEventTo.value.slice(0, 5);
   }
 });
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //function to add event to eventsArr
 addEventSubmit.addEventListener("click", () => {
   const eventTitle = addEventTitle.value;
@@ -379,8 +335,6 @@ addEventSubmit.addEventListener("click", () => {
     title: eventTitle,
     time: timeFrom + " - " + timeTo,
   };
-  console.log(newEvent);
-  console.log(activeDay);
   let eventAdded = false;
   if (eventsArr.length > 0) {
     eventsArr.forEach((item) => {
@@ -404,7 +358,7 @@ addEventSubmit.addEventListener("click", () => {
     });
   }
 
-  console.log(eventsArr);
+
   addEventWrapper.classList.remove("active");
   addEventTitle.value = "";
   addEventFrom.value = "";
@@ -415,7 +369,7 @@ addEventSubmit.addEventListener("click", () => {
   if (!activeDayEl.classList.contains("event")) {
     activeDayEl.classList.add("event");
   }
-});
+  });
 
 //function to delete event when clicked on event
 eventsContainer.addEventListener("click", (e) => {

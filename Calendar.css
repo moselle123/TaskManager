@@ -1,5 +1,5 @@
 :root {
-    --primary-clr: #646060;
+    --primary-clr: #9FA6B2;
   }
 
   *{
@@ -19,39 +19,19 @@
   }
   .calendar {
     width: 100%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     color: #333;
   }
-  /* set after behind the main element */
-  .calendar::before,
-  .calendar::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 12px;
-    height: 97%;
-    border-radius: 0 5px 5px 0;
-    background-color: #d3d4d6d7;
-    transform: translateY(-50%);
-  }
-  .calendar::before {
-    height: 94%;
-    left: calc(100% + 12px);
-    background-color: rgb(153, 153, 153);
-  }
+ 
   .calendar .month {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 500;
-    text-transform: capitalize;
   }
   .calendar .month .prev,
   .calendar .month .next {
@@ -252,7 +232,6 @@
     padding: 0 20px;
     padding-left: 50px;
     color: #333;
-    background: linear-gradient(90deg, #fff, transparent);
     cursor: pointer;
   }
   /* even event */
@@ -273,18 +252,12 @@
     color: var(--primary-clr);
     font-size: 0.5rem;
   }
-  .events .event:hover i {
-    color: #fff;
-  }
   .events .event .event-time {
     font-size: 0.8rem;
     font-weight: 400;
     color: #878895;
     margin-left: 15px;
     pointer-events: none;
-  }
-  .events .event:hover .event-time {
-    color: #fff;
   }
   /* add tick in event after */
   .events .event::after {
@@ -297,8 +270,7 @@
     display: none;
     align-items: center;
     justify-content: center;
-    opacity: 0.3;
-    color: var(--primary-clr);
+    /* opacity: 0.3; */
     transform: translateY(-50%);
   }
   .events .event:hover::after {
@@ -327,7 +299,7 @@
     position: absolute;
     bottom: 100px;
     left: 50%;
-    width: 90%;
+    width: 100%;
     max-height: 0;
     overflow: hidden;
     border-radius: 5px;
@@ -336,7 +308,7 @@
     transition: max-height 0.5s ease;
   }
   .add-event-wrapper.active {
-    max-height: 300px;
+    max-height: 100%;
   }
   .add-event-header {
     width: 100%;
@@ -346,14 +318,14 @@
     justify-content: space-between;
     padding: 0 20px;
     color: #373c4f;
-    border-bottom: 1px solid #f5f5f5;
   }
   .add-event-header .close {
     font-size: 1.5rem;
     cursor: pointer;
+    color: #333;
   }
   .add-event-header .close:hover {
-    color: var(--primary-clr);
+    color: #333;
   }
   .add-event-header .title {
     font-size: 1.2rem;
@@ -419,7 +391,7 @@
     color: var(--primary-clr);
   }
   
-  /* media queries
+  /* media queries */
   
   @media screen and (max-width: 1000px) {
     body {
@@ -479,5 +451,5 @@
     .right .today-date {
       padding: 20px;
     }
-  } */
+  }
   
