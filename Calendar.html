@@ -11,7 +11,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-secondary">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
             <!-- assistant -->
             <div class="d-flex">
@@ -20,7 +20,7 @@
                     <h3>MyAssistant</h3>
                     <form>
                         <input id="assistantQ" type="text" placeholder="How can I help?">
-                        <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestion(event)"><i class="bi bi-arrow-right-square"></i></button>
+                        <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestionHome(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </form>
                 </div>
             </div>
@@ -32,19 +32,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Dashboard.html" class="nav-link active">Home</a></h5>
+                        <h5 style="font-weight: 300;"><a href="Dashboard.html" class="nav-link active"><button class="btn btn-light">Home</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Grades.html" class="nav-link active">Grades</a></h5>
+                        <h5 style="font-weight: 500;"><a href="Grades.html" class="nav-link active"><button class="btn btn-light">Grades</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="MindMaps.html" class="nav-link active">MindMaps</a></h5>
+                        <h5 style="font-weight: 300;"><a href="MindMaps.html" class="nav-link active"><button class="btn btn-light">MindMaps</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 500;"><a href="Calendar.html" class="nav-link active">Calendar</a></h5>
+                        <h5 style="font-weight: 300;"><a href="Calendar.html" class="nav-link active"><button class="btn btn-secondary">Calendar</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Tasks.html" class="nav-link active">Tasks</a></h5>
+                        <h5 style="font-weight: 300;"><a href="Tasks.html" class="nav-link active"><button class="btn btn-light">Tasks</button></a></h5>
                     </li>
                     <li class="nav-item active">
                         <h5 style="font-weight: 300;"><a href="#" class="nav-link active"><i class="bi bi-person"></i></a></h5>
@@ -66,7 +66,7 @@
                     <img src="assistantLogo.png" alt="My Assistant" height="250rem" width="250rem">
                     <div>
                         <input id="modalInput" type="text" placeholder="How can I help?">
-                        <button class="btn p-0" type="submit"><i class="bi bi-arrow-right-square"></i></button>
+                        <button class="btn p-0" type="submit" onclick="assistantQuestionModal(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </div>
                     <div id="answer" class="border rounded bg-body mt-3 text-center p-3" style="height: 18rem; width: 18rem;">
                     </div>
@@ -154,7 +154,7 @@
     </div>
 </div> 
     
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="Calendar.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js'></script>
     <script src="Assistant.js"></script>

@@ -8,13 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
-		body {
-			overflow: hidden;
-		}
+		body {overflow: hidden;}
 	</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-secondary">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
             <!-- assistant -->
             <div class="d-flex">
@@ -23,7 +21,7 @@
                     <h3>MyAssistant</h3>
                     <form>
                         <input id="assistantQ" type="text" placeholder="How can I help?">
-                        <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestion(event)"><i class="bi bi-arrow-right-square"></i></button>
+                        <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestionHome(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </form>
                 </div>
             </div>
@@ -35,19 +33,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <h5 style="font-weight: 500;"><a href="Dashboard.html" class="nav-link active">Home</a></h5>
+                        <h5 style="font-weight: 300;"><a href="Dashboard.html" class="nav-link active"><button class="btn btn-secondary">Home</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Grades.html" class="nav-link active">Grades</a></h5>
+                        <h5 style="font-weight: 500;"><a href="Grades.html" class="nav-link active"><button class="btn btn-light">Grades</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="MindMaps.html" class="nav-link active">MindMaps</a></h5>
+                        <h5 style="font-weight: 300;"><a href="MindMaps.html" class="nav-link active"><button class="btn btn-light">MindMaps</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Calendar.html" class="nav-link active">Calendar</a></h5>
+                        <h5 style="font-weight: 300;"><a href="Calendar.html" class="nav-link active"><button class="btn btn-light">Calendar</button></a></h5>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Tasks.html" class="nav-link active">Tasks</a></h5>
+                        <h5 style="font-weight: 300;"><a href="Tasks.html" class="nav-link active"><button class="btn btn-light">Tasks</button></a></h5>
                     </li>
                     <li class="nav-item active">
                         <h5 style="font-weight: 300;"><a href="#" class="nav-link active"><i class="bi bi-person"></i></a></h5>
@@ -69,7 +67,7 @@
                     <img src="assistantLogo.png" alt="My Assistant" height="250rem" width="250rem">
                     <div>
                         <input id="modalInput" type="text" placeholder="How can I help?">
-                        <button class="btn p-0" type="submit"><i class="bi bi-arrow-right-square"></i></button>
+                        <button class="btn p-0" type="submit" onclick="assistantQuestionModal(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </div>
                     <div id="answer" class="border rounded bg-body mt-3 text-center p-3" style="height: 18rem; width: 18rem;">
                     </div>
@@ -82,16 +80,16 @@
     <div class="justify-content-center p-4 m-0 row" style="height: 100vh; width: 100vw;">
 
         <!-- today -->
-        <div class="col-1 border rounded p-4 mx-auto d-flex flex-column" style="width: 25vw; height: 70vh;">
-            <h1 class="pb-5">Today</h1>
-            <div class="row" style="width: 100%;">
+        <div class="col-1 border rounded mx-auto d-flex flex-column" style="width: 25vw; height: 70vh;">
+            <h1 class="pb-5 p-4 ">Today</h1>
+            <div class="row ps-4" style="width: 100%;">
                 <div class="col">
                     <ul class="to-dos list-unstyled" id="todayList">
                     </ul>
                 </div>
             </div>
         
-            <div class="mt-auto">
+            <div class="m-auto mb-2">
                 <button class="btn p-0 pe-3 pb-1" onclick="addTask()"><i class="bi bi-plus-circle"></i></button>
                 <input id="todayInput" type="text">
                 <button class="btn p-0 ps-1 pb-1"><i class="bi bi-mic"></i></button>
@@ -159,6 +157,7 @@
         
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="Dashboard.js"></script>
     <script src="Assistant.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
