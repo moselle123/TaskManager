@@ -4,16 +4,16 @@ tasks = [];
 function addTask() {
     var todayInput = document.getElementById("todayInput");
     var todayList = document.getElementById("todayList");
-    var isChecked = false; // set the initial state of checkbox to false
+    //var isChecked = false; // set the initial state of checkbox to false
 
     todayList.innerHTML+= "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">" + todayInput.value + "</p></div><div class=\"col-1\"><button class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></button></div></li>";
     todayInput.value = ""; // clear the input field
     window.localStorage.setItem("tasks",todayList.innerHTML);
   }
+  //NEED TO ADD CHECKBOX FUNCTIONALITY
+  // function updateCheckBox(){
 
-  function updateCheckBox(){
-
-  }
+  // }
   
   function loadPage() {
     var todayList = document.getElementById("todayList");
@@ -23,9 +23,11 @@ function addTask() {
       todayList.innerHTML+= tasks[i];
     }
   }
-  window.onload = loadPage; 
+  window.onload = function() {
+    loadPage();
+    updateTime();
+  }
 //Clock
-
 function updateTime() {
     var now = new Date();
     var hours = now.getHours();
