@@ -1,3 +1,5 @@
+// localStorage.clear();
+newModule();
 var modulesList = JSON.parse(window.localStorage.getItem("modulesList")) || [
     {
       name: "Software Architecture",
@@ -14,7 +16,7 @@ var modulesList = JSON.parse(window.localStorage.getItem("modulesList")) || [
       completed: 100
     }
   ];
-  
+  //when the page loads add the divs from the information in the modules list
   function loadPage() {
     var modules = document.getElementById("modules");
     modules.innerHTML = ""; // Clear the modules container
@@ -40,26 +42,28 @@ window.onload = function() {
 loadPage();
 }
 
+// add event listener when the new module modal is opened
 $('#newModuleModal').on('shown.bs.modal', function () {
-      newModule();
-      let closeButton = document.getElementById('cancelButton');
-      closeButton.addEventListener('click', function() {
+    let moduleName = document.getElementById("moduleName").value;
+    let credit = document.getElementById("credits").value;
+    moduleName.value = "";
+    credit.value = "";
+    let closeButton = document.getElementById('cancelButton');
+    closeButton.addEventListener('click', function() {
         $('newModuleModal').modal('hide');
-      });
-  });
+    });
+});
 
 function newModule(){
     document.getElementById("saveModuleButton").addEventListener('click', function(event){
-        
         event.preventDefault();
-
+        
         let moduleName = document.getElementById("moduleName").value;
         let credit = document.getElementById("credits").value;
-
         var moduleObject = {name: moduleName, credits: credit, average: 0, achieved: 0, completed: 0};
         modulesList.push(moduleObject);
         window.localStorage.setItem("modulesList", JSON.stringify(modulesList));
         $('#newModuleModal').modal('hide');
         loadPage();
-        });
+    });
 }
