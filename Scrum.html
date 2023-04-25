@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scrum Module</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="Grades.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+		body {overflow: hidden;}
+	</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <!-- assistant -->
+            <div class="d-flex">
+                <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#assistantModal"><img src="assistantLogo.png" alt="My Assistant" height="90rem"></button>
+                <div class="ps-2">
+                    <h3>MyAssistant</h3>
+                    <form>
+                        <input id="assistantQ" type="text" placeholder="How can I help?">
+                        <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestionHome(event)"><i class="bi bi-arrow-right-square"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- right nav -->
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <h5 style="font-weight: 300;"><a href="Dashboard.html" class="nav-link active"><button class="btn btn-light">Home</button></a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 style="font-weight: 500;"><a href="Grades.html" class="nav-link active"><button class="btn btn-secondary">Grades</button></a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 style="font-weight: 300;"><a href="MindMaps.html" class="nav-link active"><button class="btn btn-light">MindMaps</button></a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 style="font-weight: 300;"><a href="Calendar.html" class="nav-link active"><button class="btn btn-light">Calendar</button></a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 style="font-weight: 300;"><a href="Tasks.html" class="nav-link active"><button class="btn btn-light">Tasks</button></a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 style="font-weight: 300;"><a href="#" class="nav-link active"><i class="bi bi-person"></i></a></h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- assistant modal  -->
+    <div class="modal fade" id="assistantModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">My Assistant</h3>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-body-secondary d-flex flex-column align-items-center p-0 pb-3">
+                    <img src="assistantLogo.png" alt="My Assistant" height="250rem" width="250rem">
+                    <div>
+                        <input id="modalInput" type="text" placeholder="How can I help?">
+                        <button class="btn p-0" type="submit" onclick="assistantQuestionModal(event)"><i class="bi bi-arrow-right-square"></i></button>
+                    </div>
+                    <div id="answer" class="border rounded bg-body mt-3 text-center p-3" style="height: 18rem; width: 18rem;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- body -->
+    <div class="container mt-5 d-flex flex-row justify-content-center align-content-center p-0" style="height: 70vh;">
+        <!-- module -->
+        <div class="border rounded p-3" style="width: 90vw;">
+            <!-- header -->
+            <div class="d-flex" style="justify-content: space-between;">
+                <h1>Scrum</h1>
+                <div class="d-flex flex-column">
+                    <div>
+                        <button class="btn btn-outline-secondary me-2">Edit</button>
+                        <button class="btn btn-outline-secondary">Delete</button>
+                    </div>
+                    <button class="btn" style="font-weight: bold;" data-bs-toggle="modal" data-bs-target="#newAssessmentModal"><i class="bi bi-plus-circle me-2"></i>Add Assessment</button>
+                </div>
+            </div>
+            <!-- module progression -->
+            <div class="d-flex justify-content-evenly mt-3">
+                <div class="d-flex flex-column align-items-center">
+                    <h5 id="progressionAverage">77.1%</h5>
+                    <p>Average</p>
+                </div>
+                <div class="d-flex flex-column align-items-center text-success">
+                    <h5 id="progressionAchieved">54</h5>
+                    <p>Achieved</p>
+                </div>
+                <div class="d-flex flex-column align-items-center text-danger">
+                    <h5 id="progressionComplete">70</h5>
+                    <p>Complete</p>
+                </div>
+            </div>
+            <div class="progress-stacked mx-3">
+                <div class="progress" role="progressbar" aria-label="Achieved" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                    <div class="progress-bar bg-success"></div>
+                </div>
+                <div class="progress" role="progressbar" aria-label="Complete" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                    <div class="progress-bar bg-danger"></div>
+                </div>
+            </div>
+
+            <!-- assessments -->
+            <div class="d-grid p-4 mt-3 justify-content-center overflow-auto" style="max-height: 40vh;" id="assessments">
+                <div class="row mt-3">
+                    <div class="border rounded p-2 me-5" style="width: 25vw;">
+                        <h6 class="text-center fw-bold">Semester 1</h6>
+                        <div class="d-flex justify-content-evenly mt-3">
+                            <div class="d-flex flex-column align-items-center text-success">
+                                <h6>70%</h6>
+                                <p>Achieved</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <h6>50%</h6>
+                                <p>Weighting</p>
+                            </div>
+                        </div>
+                        <div class="progress-stacked mx-3">
+                            <div class="progress" role="progressbar" aria-label="Achieved" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                <div class="progress-bar bg-success"></div>
+                            </div>
+                            <div class="progress" role="progressbar" aria-label="Loss" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                                <div class="progress-bar bg-success-subtle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border rounded p-2 me-5" style="width: 25vw;">
+                        <h6 class="text-center fw-bold">Sprint 0</h6>
+                        <div class="d-flex justify-content-evenly mt-3">
+                            <div class="d-flex flex-column align-items-center text-success">
+                                <h6>80%</h6>
+                                <p>Achieved</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <h6>5%</h6>
+                                <p>Weighting</p>
+                            </div>
+                        </div>
+                        <div class="progress-stacked mx-3">
+                            <div class="progress" role="progressbar" aria-label="Achieved" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                <div class="progress-bar bg-success"></div>
+                            </div>
+                            <div class="progress" role="progressbar" aria-label="Loss" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+                                <div class="progress-bar bg-success-subtle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="border rounded p-2 me-5" style="width: 25vw;">
+                        <h6 class="text-center fw-bold">Sprint Checkpoints</h6>
+                        <div class="d-flex justify-content-evenly mt-3">
+                            <div class="d-flex flex-column align-items-center text-success">
+                                <h6>100%</h6>
+                                <p>Achieved</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <h6>15%</h6>
+                                <p>Weighting</p>
+                            </div>
+                        </div>
+                        <div class="progress-stacked mx-3">
+                            <div class="progress" role="progressbar" aria-label="Achieved" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                <div class="progress-bar bg-success"></div>
+                            </div>
+                            <div class="progress" role="progressbar" aria-label="Loss" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                <div class="progress-bar bg-success-subtle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="Grades.html" class="btn float-end fw-bold me-5 mt-2">Back to Modules <i class="bi bi-arrow-right-square ms-2 me-5"></i></a>
+
+
+    <!-- grades modal -->
+    <div class="modal fade" id="newAssessmentModal" tabindex="-1" aria-labelledby="newAssessmentLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newAssessmentLabel">New Assessment</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="d-flex flex-column justify-content-evenly" style="height: 30vh;">
+                    <input class="p-2" id="moduleName" type="text" placeholder="Name of Assessment...">
+                    <input class="p-2" id="percentage" type="text" placeholder="What percentage of this module is it worth?">
+                    <input class="p-2" id="percentageAchieved" type="text" placeholder="What percentage did you achieve?">
+                    <!-- add a placeholder checkbox -->
+                    <div class="mt-3">
+                        <button class="btn btn-primary" id="saveModuleButton">Save</button>
+                        <button class="btn btn-outline-secondary" id="cancelButton">Cancel</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Scrum.js"></script>
+    <script src="Assistant.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
