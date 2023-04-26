@@ -1,13 +1,13 @@
 //Today
-tasks = [];
+tasks = ["<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Do Laundry</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>", "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Client Meeting @ 2</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>"];
 
 function addTask() {
     var todayInput = document.getElementById("todayInput");
     var todayList = document.getElementById("todayList");
     //var isChecked = false; // set the initial state of checkbox to false
 
-    todayList.innerHTML+= "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">" + todayInput.value + "</p></div><div class=\"col-1\"><button class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></button></div></li>";
-    todayInput.value = ""; // clear the input field
+    todayList.innerHTML+= "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">" + todayInput.value + "</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>";
+    todayInput.value = "";
     window.localStorage.setItem("tasks",todayList.innerHTML);
   }
   //NEED TO ADD CHECKBOX FUNCTIONALITY
@@ -22,7 +22,40 @@ function addTask() {
     for (var i = 0; i < tasks.length; i++) {
       todayList.innerHTML+= tasks[i];
     }
-  }
+
+    const data = {
+      labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      datasets: [
+          {
+              label: "Stress Level",
+              data: [2, 3, 5, 4, 6],
+              borderColor: "rgba(255, 99, 132, 1)",
+              borderWidth: 2,
+              fill: false,
+              pointRadius: 4,
+              pointBackgroundColor: "rgba(255, 99, 132, 1)"
+          }
+      ]
+  };
+
+  const config = {
+      type: "line",
+      data: data,
+      options: {
+          scales: {
+              y: {
+                  ticks: {
+                      beginAtZero: true,
+                      stepSize: 1
+                  }
+              }
+          }
+      }
+  };
+
+  const myChart = new Chart(document.getElementById("myChart"), config);
+}
+
   window.onload = function() {
     loadPage();
     updateTime();
