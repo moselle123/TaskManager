@@ -91,3 +91,34 @@ function updateTime() {
   
   // Call updateTime every second to update the time
   setInterval(updateTime, 1000);
+
+  $(document).ready(function() {
+    // initialize variables
+    var currentSlide = 1;
+    var numSlides = $('.carousel-item').length;
+  
+    // hide all slides except the first one
+    $('.carousel-item').not(':first').hide();
+  
+    // when the previous button is clicked, show the previous slide
+    $('.prev').click(function() {
+        $('.carousel-item').eq(currentSlide - 1).fadeOut(500);
+        if (currentSlide == 1) {
+            currentSlide = numSlides;
+        } else {
+            currentSlide--;
+        }
+        $('.carousel-item').eq(currentSlide - 1).fadeIn(500);
+    });
+  
+    // when the next button is clicked, show the next slide
+    $('.next').click(function() {
+        $('.carousel-item').eq(currentSlide - 1).fadeOut(500);
+        if (currentSlide == numSlides) {
+            currentSlide = 1;
+        } else {
+            currentSlide++;
+        }
+        $('.carousel-item').eq(currentSlide - 1).fadeIn(500);
+    });
+});

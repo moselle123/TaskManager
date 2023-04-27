@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Dashboard.html" class="nav-link active"><button class="btn btn-light">Home</button></a></h5>
+                        <h5 style="font-weight: 300;"><a href="Index.html" class="nav-link active"><button class="btn btn-light">Home</button></a></h5>
                     </li>
                     <li class="nav-item active">
                         <h5 style="font-weight: 500;"><a href="Grades.html" class="nav-link active"><button class="btn btn-light">Grades</button></a></h5>
@@ -78,7 +78,7 @@
     </div>
 
     <!-- body -->
-    <div class="container align-items-center justify-content-evenly p-5 d-flex flex-row">
+    <div class="container align-items-center justify-content-evenly p-3 d-flex flex-row">
         <!-- customise page -->
         <div class="d-flex flex-column" style="width: 25vw;">
             <h2>My Home Layout</h2>
@@ -103,43 +103,80 @@
             </div>
         </div>
 
-        <div class="d-flex flex-column" style="width: 25vw;">
+        <div class="d-flex flex-column" style="width: 30vw;">
             <h2>Task Manager Settings</h2>
-            <div class="d-flex flex-column border rounded" style="height: 60vh;">
-                <div class="d-flex flex-column border-bottom p-2" style="height: 16.7%;">
-                    <h5>Allow Syncing</h5>
+            <div class="d-flex flex-column border rounded" style="height: 75vh;">
+                <div class="d-flex flex-column border-bottom p-2" style="height: 14%;">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h6>Allow Syncing</h6>
+                        <div class="form-check form-switch justify-content-between">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
                     <p>Syncing allows you to access your task manager across devices.</p>
                 </div>
-                <div class="d-flex flex-column border-bottom p-2" style="height: 16.7%;">
-                    <h5>Allow My Assistant</h5>
+                <div class="d-flex flex-column border-bottom p-2" style="height: 15%;">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h6>Allow My Assistant</h6>
+                        <div class="form-check form-switch justify-content-between">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
                     <p>Give access to your microphone to allow you to converse with my assistant.</p>
                 </div>
-                <div class="d-flex flex-column border-bottom p-2" style="height: 16.7%;">
-                    <h5>Fitness Tracker</h5>
+                <div class="d-flex flex-column border-bottom p-2 pb-1" style="height: 19%;">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h6>Fitness Tracker</h6>
+                        <div class="form-check form-switch justify-content-between">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
                     <p>Connect your fitness tracker to view your stress readings.</p>
+                    <div class="d-flex flex-row justify-content-between">
+                        <p style="font-size: small;">Fitbit 2 - Connected</p>
+                        <div class="d-flex flex-row">
+                            <button class="btn btn-outline-secondary" style="font-size: smaller;">Sync</button>
+                            <button class="btn btn-outline-secondary" style="font-size: smaller;">Remove</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex flex-column border-bottom p-2" style="height: 16.7%;">
-                    <h5>Alerts</h5>
+                <div class="d-flex flex-column border-bottom p-2" style="height: 13;">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h6>Alerts</h6>
+                        <div class="form-check form-switch justify-content-between">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
                     <p>We will send you alerts to any device you are logged into for upcoming deadlines and events.</p>
                 </div>
-                <div class="d-flex flex-column p-2" style="height: 16.7%;">
-                    <h5>Smart Speaker</h5>
+                <div class="d-flex flex-column p-2 border-bottom" style="height: 15%;">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h6>Smart Speaker</h6>
+                        <div class="form-check form-switch justify-content-between">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
                     <p>Connect your smart speaker to use my assistant voice prompts.</p>
                 </div>
-                <div class="d-flex flex-column p-2" style="height: 16.7%;">
-                    <h5>Sync Calendar</h5>
+                <div class="d-flex flex-column p-1">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h6>Sync Calendar</h6>
+                        <div class="form-check form-switch justify-content-between">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
                     <p>Select which platform you would like to import from:</p>
                     <div class="d-flex flex-row p-1 justify-content-between">
-                        <button class="btn">Google</button>
-                        <button class="btn">Outlook</button>
-                        <button class="btn">Yahoo!</button>
-                        <button class="btn">Other</button>
+                        <button class="btn btn-outline-secondary">Google</button>
+                        <button class="btn btn-outline-secondary">Outlook</button>
+                        <button class="btn btn-outline-secondary">Yahoo!</button>
+                        <button class="btn btn-outline-secondary">Other</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <a href="Dashboard.html" class="btn float-end fw-bold me-5 mt-2">Back to Home <i class="bi bi-arrow-right-square ms-2 me-5"></i></a>
+    <a href="Index.html" class="btn float-end fw-bold me-5 mt-2">Back to Home <i class="bi bi-arrow-right-square ms-2 me-5"></i></a>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="Assistant.js"></script>

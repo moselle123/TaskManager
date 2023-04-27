@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Dashboard.html" class="nav-link active"><button class="btn btn-secondary">Home</button></a></h5>
+                        <h5 style="font-weight: 300;"><a href="Index.html" class="nav-link active"><button class="btn btn-secondary">Home</button></a></h5>
                     </li>
                     <li class="nav-item active">
                         <h5 style="font-weight: 500;"><a href="Grades.html" class="nav-link active"><button class="btn btn-light">Grades</button></a></h5>
@@ -109,14 +109,27 @@
 
             <!-- productivity tips -->
             <div class="row">
-                <div class="row rounded mx-auto shadow" style="height: 40vh;">
-                    <h2 class="mt-3 text-start pb-2">Productivity Tips</h2>
-                    <div class="d-flex align-items-center">
-                        <button class="btn"><i class="bi bi-chevron-left"></i></button>
-                        <canvas height="100em" width="200em" id="myChart" alt="Productivity Graph" class="border mx-auto"></canvas>
-                        <button class="btn "><i class="bi bi-chevron-right"></i></button>
+                <div class="row rounded mx-auto shadow" style="height: 45vh; width: 40vw;">
+                    <h2 class="mt-3 text-start">Productivity Tips</h2>
+                    <div id="carousel">
+                        <div class="carousel-item active d-flex flex-row align-items-center">
+                            <button class="btn" id="prev"><i class="bi bi-chevron-left"></i></button>
+                            <div>
+                                <canvas height="200em" width="500em" id="myChart" alt="Productivity Graph" class="border mx-auto"></canvas>
+                                <p class="mt-3 mb-1">It looks like your stress levels are high, consider completing some of our <a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/stress/what-is-stress/#:~:text=Stress%20is%20how%20we%20react,you%20are%20struggling%20to%20manage">stress relieving activities</a>.</p>
+                            </div>
+                            <button class="btn" id="next"><i class="bi bi-chevron-right"></i></button>
+                        </div>
+                        <div class="carousel-item d-flex flex-row align-items-center" style="height: 200em;">
+                            <button class="btn" id="prev1"><i class="bi bi-chevron-left"></i></button>
+                            <div class="mx-auto d-flex flex-column align-items-center">
+                                <p class="my-5">It looks like you have a busy day on Wednesday, why not move your Grocery Shop to Tuesday when you're less busy?</p>
+                                <button class="btn btn-outline-secondary mb-2">See Wednesday's Timetable</button>
+                                <button class="btn btn-outline-secondary">Move 'Grocery Shop' to Tuesday</button>
+                            </div>
+                            <button class="btn" id="next1"><i class="bi bi-chevron-right"></i></button>
+                        </div>
                     </div>
-                    <p class="mt-3 mb-1">It looks like your stress levels are high, consider completing some of our <a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/stress/what-is-stress/#:~:text=Stress%20is%20how%20we%20react,you%20are%20struggling%20to%20manage">stress relieving activities</a>.</p>
                 </div>
             </div>
         </div>
@@ -159,7 +172,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Dashboard.js"></script>
+    <script src="Index.js"></script>
     <script src="Assistant.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
