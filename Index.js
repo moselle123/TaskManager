@@ -1,5 +1,4 @@
-//Today
-tasks = ["<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Do Laundry</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>", "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Client Meeting @ 2</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>"];
+var tasks = JSON.parse(window.localStorage.getItem("modulesList")) || ["<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Do Laundry</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>", "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Client Meeting @ 2</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>"];
 
 function addTask() {
     var todayInput = document.getElementById("todayInput");

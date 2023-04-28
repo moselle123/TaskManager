@@ -10,28 +10,25 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-primary-subtle">
+    <nav class="navbar navbar-expand-sm navbar-light bg-body-secondary">
         <div class="container">
                 <h3>Task Manager</h3>
         </div>
     </nav>
 
-    <div class="container text-center loginForm">
-        <div class="row justify-content-center">
-            <form>
-                <h1 class="my-3">Login</h1>
+    <div class="container text-center loginForm d-flex flex-column justify-content-evenly" style="width: 40vw; height: 60vh;">
+            <h1 class="my-3">Login</h1>
+            <div>
                 <label for="username" class="visually-hidden">Username</label>
-                <input type="text" class="form-control mb-3" id="username" placeholder="Username" required autofocus>
-
+                <input type="text" class="form-control mb-2" id="username" placeholder="Username" required autofocus>
                 <label class="visually-hidden">Password:</label>
                 <input type="password" class="form-control" id="password" placeholder="Password">
-                <button type="submit" class="my-2 btn btn-lg btn-block btn-primary"  onclick="validate()">Submit</button>
-            </form>
-            <div>
-                <a class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="forgot.html">Forgot password?</a>
-                <a class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover" href="signUp.html">Don't have an account? Sign Up</a>
             </div>
-        </div>
+            <button type="submit" class="my-2 btn btn-lg btn-block btn-primary"  onclick="validate()">Submit</button>
+            <div class="d-flex flex-column">
+                <a class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover text-end mb-1" href="forgot.html">Forgot password?</a>
+                <a class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover text-end" href="signUp.html">Don't have an account? Sign Up</a>
+            </div>
     </div>
 
     <script src="Login.js"></script>
