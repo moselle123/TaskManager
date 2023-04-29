@@ -13,3 +13,8 @@ label {
   border: none;
   padding: 5px 10px;
 }
+
+input[type=range]::-webkit-slider-runnable-track {
+  cursor: pointer;
+  background: #82b0d8;
+}

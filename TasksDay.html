@@ -97,77 +97,93 @@
         </div>
 
         <!-- gantt chart -->
-        <div class="border rounded d-flex flex-row" style="height: 60vh; position: relative;">
+        <div class="border rounded d-flex flex-row overflow-auto" style="height: 60vh; max-width: 90vw; position: relative;">
 
-            <!-- weekdays -->
-            <div class="bg-body-secondary border-end" style="width: 14.3%; height: 100%;">
-                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">Monday</p></div>
+            <!-- hours -->
+            <div class="bg-body-secondary border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">09:00</p></div>
                 <div style="height: 90%;"></div>
             </div>
-            <div class="border-end" style="width: 14.3%; height: 100%;">
-                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">Tuesday</p></div>
+            <div class="border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">10:00</p></div>
                 <div style="height: 90%;"></div>
             </div>
-            <div class="bg-body-secondary border-end" style="width: 14%; height: 100%;">
-                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">Wednesday</p></div>
+            <div class="bg-body-secondary border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">11:00</p></div>
                 <div style="height: 90%;"></div>
             </div>
-            <div class="border-end" style="width: 14.3%; height: 100%;">
-                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">Thursday</p></div>
+            <div class="border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">12:00</p></div>
                 <div style="height: 90%;"></div>
             </div>
-            <div class="bg-body-secondary border-end" style="width: 14.3%; height: 100%;">
-                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">Friday</p></div>
+            <div class="bg-body-secondary border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">13:00</p></div>
                 <div style="height: 90%;"></div>
             </div>
-            <div class="border-end" style="width: 14.3%; height: 100%;">
-                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">Saturday</p></div>
+            <div class="border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">14:00</p></div>
                 <div style="height: 90%;"></div>
             </div>
-            <div class="bg-body-secondary" style="width: 14.5%; height: 100%;">
-                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">Sunday</p></div>
+            <div class="bg-body-secondary" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">15:00</p></div>
+                <div style="height: 90%;"></div>
+            </div>
+            <div class="border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">16:00</p></div>
+                <div style="height: 90%;"></div>
+            </div>
+            <div class="bg-body-secondary border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">17:00</p></div>
+                <div style="height: 90%;"></div>
+            </div>
+            <div class="border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">18:00</p></div>
+                <div style="height: 90%;"></div>
+            </div>
+            <div class="bg-body-secondary border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">19:00</p></div>
+                <div style="height: 90%;"></div>
+            </div>
+            <div class="border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">20:00</p></div>
+                <div style="height: 90%;"></div>
+            </div>
+            <div class="bg-body-secondary border-end" style="width: 10vw; height: 100%;">
+                <div class="border-bottom border-2" style="height: 10%;"><p class="fw-bold text-center pt-2">21:00</p></div>
                 <div style="height: 90%;"></div>
             </div>
 
             <!-- tasks -->
-            <div class="wrapper d-flex flex-row border rounded bg-primary bg-opacity-75 align-items-center px-2" style="position: absolute; top: 10%; width: 71.2%; height: 15%; justify-content: space-between;">
-                <p class="fs-5 mb-0 fw-bold">UI Coursework</p>
+            <div class="wrapper d-flex flex-row border rounded bg-primary bg-opacity-75 align-items-center px-2" style="position: absolute; top: 10%; width: 26vw; height: 20%; justify-content: space-between;">
+                <p class="fs-5 mb-0 fw-bold">Do Laundry</p>
                 <div class="buttons">
                     <label for="checkbox">Completed</label>
                     <input type="checkbox" id="checkbox">
-                    <button class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#newTaskModal" onclick="editTask('UI Coursework', 'school', '2023-03-10', 0, 0, 3)">Edit</button>
+                    <button class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#newTaskModal" onclick="editTask('Do Laundry', 'personal', '2023-03-10', 4, 0, 0)">Edit</button>
                     <button class="btn btn-light">Delete</button>
                 </div>
             </div>
-            <div class="wrapper d-flex flex-row bg-primary-subtle bg-opacity-75 border rounded align-items-center px-2" style="position: absolute; top: 25%; left: 28.5%; width: 42.7%; height: 15%; justify-content: space-between;">
-                <p class="fs-5 fw-bold mb-0">Game Design Document</p>
+            <div class="wrapper d-flex flex-row bg-primary-subtle bg-opacity-75 border rounded align-items-center px-2" style="position: absolute; top: 25%; left: 38.5%; width: 26vw; height: 20%; justify-content: space-between;">
+                <p class="fs-5 fw-bold mb-0">Client Meeting @ 2</p>
                 <div class="buttons">
                     <label for="checkbox">Completed</label>
                     <input type="checkbox" id="checkbox">
-                    <button class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#newTaskModal" onclick="editTask('Game Design Document', 'school', '2023-03-22', 0, 3, 0)">Edit</button>
+                    <button class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#newTaskModal" onclick="editTask('Client Meeting', 'school', '2023-03-10', 4, 0, 0)">Edit</button>
                     <button class="btn btn-light">Delete</button>
                 </div>
             </div>
-            <div class="wrapper d-flex flex-row bg-primary bg-opacity-75 border rounded align-items-center px-2" style="position: absolute; top: 40%; left: 42.5%; width: 57.7%; height: 15%; justify-content: space-between;">
-                <p class="fs-5 fw-bold mb-0">Sprint 2</p>
-                <div class="buttons">
-                    <label for="checkbox">Completed</label>
-                    <input type="checkbox" id="checkbox">
-                    <button class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#newTaskModal" onclick="editTask('Sprint 2', 'school', '2023-03-15', 0, 3, 2)">Edit</button>
-                    <button class="btn btn-light">Delete</button>
-                </div>
-            </div>
+            
         </div>
 
         <!-- time filters -->
         <div class="d-flex flex-row" style="justify-content: space-between;">
-            <button class="btn fw-bold"><i class="bi bi-arrow-left-square"></i> Previous Week</button>
+            <button class="btn fw-bold"><i class="bi bi-arrow-left-square"></i> Previous 12 Hours</button>
             <div class="d-flex flex-row justify-content-center mt-3">
-                <button class="btn btn-outline-secondary">Day</button>
-                <button class="btn btn-secondary mx-5">Week</button>
+                <button class="btn btn-secondary">Day</button>
+                <button class="btn btn-outline-secondary mx-5">Week</button>
                 <button class="btn btn-outline-secondary">Month</button>
             </div>
-            <button class="btn fw-bold">Next Week <i class="bi bi-arrow-right-square"></i></button>
+            <button class="btn fw-bold">Next 12 hours <i class="bi bi-arrow-right-square"></i></button>
         </div>
     </div>
 

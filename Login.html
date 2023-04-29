@@ -26,9 +26,44 @@
             </div>
             <button type="submit" class="my-2 btn btn-lg btn-block btn-primary"  onclick="validate()">Submit</button>
             <div class="d-flex flex-column">
-                <a class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover text-end mb-1" href="forgot.html">Forgot password?</a>
+                <a class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover text-end mb-1" href="forgot.html" data-bs-toggle="modal" data-bs-target="#forgotModal">Forgot password?</a>
                 <a class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover text-end" href="signUp.html">Don't have an account? Sign Up</a>
             </div>
+    </div>
+
+    <!-- forgot password modal  -->
+    <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">Forgotten your Details?</h3>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-body-secondary d-flex flex-column p-3 pb-3">
+                    <p>Enter your email below so we can send you a verification code:</p>
+                    <label for="email" class="visually-hidden">Email</label>
+                    <input type="text" class="form-control mb-2" id="email" placeholder="Email" required autofocus>
+                    <div class="mb-2">
+                        <button class="float-end btn btn-primary" onclick="codeSent()">Send Code</button>
+                    </div>
+                    <p>Now check your email and enter the code in the message you received.</p>
+                    <label for="code" class="visually-hidden">verification Code</label>
+                    <input type="text" class="form-control mb-2" id="verificationCode" placeholder="Verification Code" required autofocus>
+                    <div class="mb-2">
+                        <button class="float-end btn btn-primary">Verify</button>
+                    </div>
+                    <p>Now enter your new password, your new password must include:</p>
+                    <ul>
+                        <li>At least one uppercase letter.</li>
+                        <li>At least one number.</li>
+                    </ul>
+                    <p>Now check your email and enter the code in the message you received.</p>
+                    <label for="code" class="visually-hidden">verification Code</label>
+                    <input type="text" class="form-control mb-2" id="verificationCode" placeholder="New Password" required autofocus>
+                    <button class="float-end btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="Login.js"></script>

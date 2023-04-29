@@ -1,11 +1,12 @@
-var tasks = JSON.parse(window.localStorage.getItem("modulesList")) || ["<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Do Laundry</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>", "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Client Meeting @ 2</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>"];
+localStorage.clear();
+var tasks = JSON.parse(window.localStorage.getItem("modulesList")) || ["<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Do Laundry</p></div><div class=\"col-1\"><a href=\"TasksDay.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>", "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">Client Meeting @ 2</p></div><div class=\"col-1\"><a href=\"TasksDay.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>"];
 
 function addTask() {
     var todayInput = document.getElementById("todayInput");
     var todayList = document.getElementById("todayList");
     //var isChecked = false; // set the initial state of checkbox to false
 
-    todayList.innerHTML+= "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">" + todayInput.value + "</p></div><div class=\"col-1\"><a href=\"Tasks.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>";
+    todayList.innerHTML+= "<li class=\"list-item row\"><div class=\"col-1\"><input type=\"checkbox\" onclick=\"updateCheckBox()\"></div><div class=\"col-9\"><p class=\"m-0\">" + todayInput.value + "</p></div><div class=\"col-1\"><a href=\"TasksDay.html\" class=\"btn p-0\"><i class=\"bi bi-arrow-right-square\"></i></a></div></li>";
     todayInput.value = "";
     window.localStorage.setItem("tasks",todayList.innerHTML);
   }
