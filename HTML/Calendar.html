@@ -6,7 +6,7 @@
     <title>Calendar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="Calendar.css">
+    <link rel="stylesheet" href="../CSS/Calendar.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
@@ -14,13 +14,14 @@
         <div class="container">
             <!-- assistant -->
             <div class="d-flex">
-                <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#assistantModal"><img src="assistantLogo.png" alt="My Assistant" height="90rem"></button>
+                <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#assistantModal"><img src="../Images/assistantLogo.png" alt="My Assistant" height="90rem"></button>
                 <div class="ps-2">
                     <h3>MyAssistant</h3>
                     <form>
                         <input id="assistantQ" type="text" placeholder="How can I help?">
                         <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestionHome(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </form>
+                    <p class="fw-bold">Ctrl + A</p>
                 </div>
             </div>
 
@@ -62,13 +63,18 @@
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bg-body-secondary d-flex flex-column align-items-center p-0 pb-3">
-                    <img src="assistantLogo.png" alt="My Assistant" height="250rem" width="250rem">
+                    <img src="../Images/assistantLogo.png" alt="My Assistant" height="250rem" width="250rem">
                     <div>
                         <input id="modalInput" type="text" placeholder="How can I help?">
                         <button class="btn p-0" type="submit" onclick="assistantQuestionModal(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </div>
-                    <div id="answer" class="border rounded bg-body mt-3 text-center p-3" style="height: 18rem; width: 18rem;">
+                    <div id="answer" class="border rounded bg-body mt-3 text-center p-3 position-relative" style="height: 18rem; width: 18rem;">
+                        <div class="position-absolute m-1 justify-content-center" style="bottom: 0; right: 0;">
+                            <button class="btn p-0"><h1><i class="bi bi-volume-up"></i></h1></button>
+                            <p class="m-0" style="font-size: xx-small;">Read Aloud?</p>
+                        </div>
                     </div>
+                    <p class="mb-0 mt-1">Click assistant symbol to ask questions using the microphone</p>
                 </div>
             </div>
         </div>
@@ -76,7 +82,7 @@
     <!-- body -->
     <!-- filters -->
     <div class="container pt-3">
-        <div class="d-flex flex-row" style="justify-content: space-between;">
+        <div class="d-flex flex-row justify-content-between">
             <div class="d-flex flex-row mb-3">
                 <button class="btn btn-secondary me-1">All</button>
                 <button class="btn btn-outline-dark mx-1">Work</button>
@@ -84,12 +90,15 @@
                 <button class="btn btn-outline-dark ms-1">Personal</button>
                 <div class="goto-today ps-3 pt-1">
                     <div class="goto">
-                        <input type="text" placeholder="MM/YYYY" class="date-input" />
+                        <input type="text" placeholder="MM/YYYY" class="date-input"/>
                         <button class="goto-btn btn"><i class="bi bi-search pb-1"></i></button>
                     </div>
                 </div>
             </div>
-            <div><button class="btn btn-outline-dark justify-content-evenly add-event""><i class="bi bi-plus-circle me-2"></i>Add Event</button></div>
+            <div class="flex-column justify-content-end">
+                <button class="btn fw-bold pe-0 justify-content-evenly add-event" id="addEvent"><i class="bi bi-plus-circle me-2"></i>Add Event</button>
+                <p class="fw-bold text-end" style="font-size: smaller;">(Ctrl + I)</p>
+            </div>
         </div>
     </div>
 
@@ -125,38 +134,43 @@
                     <div class="title">Add Event</div>
                     <i class="fas fa-times close"></i>
                 </div>
-            <div class="add-event-body">
-                <div class="add-event-input">
-                    <input type="text" placeholder="Event Name" class="event-name" />
+                <div class="add-event-body">
+                    <div class="add-event-input">
+                        <input type="text" placeholder="Event Name" class="event-name" />
+                    </div>
+                    <div class="add-event-input">
+                        <input type="text" placeholder="Start Time (HH:MM)" class="event-time-from"/>
+                    </div>
+                    <div class="add-event-input">
+                        <input type="text" placeholder="End Time (HH:MM)" class="event-time-to"/>
+                    </div>
+                    <div class="d-flex flex-row w-100">
+                        <input type="text" placeholder="Location"/>
+                        <button class="btn btn-primary">Find Address</button>
+                    </div>
+                    <select disabled>
+                        <option value="Select Address"></option>
+                    </select>
+                    <select>
+                        <option value="Category"></option>
+                        <option value="All"></option>
+                        <option value="Work"></option>
+                        <option value="School"></option>
+                        <option value="Personal"></option>
+                    </select>
                 </div>
-                <div class="add-event-input">
-                    <input type="text" placeholder="From" class="event-time-from"/>
+                <div class="add-event-footer">
+                    <button class="add-event-btn btn btn-primary">Add Event</button>
                 </div>
-                <div class="add-event-input">
-                    <input type="text" placeholder="To" class="event-time-to"/>
-                </div>
-                <div class="add-event-input">
-                    <input type="text" placeholder="To" class="event-time-to"/>
-                </div>
-                <div class="add-event-input">
-                    <option placeholder="Category" class="event-category">
-                        <select name="Work" id="work"></select>
-                        <select name="School" id="school"></select>
-                        <select name="Personal" id="personal"></select>
-                    </option>
-                </div>
-            </div>
-            <div class="add-event-footer">
-                <button class="add-event-btn">Add Event</button>
             </div>
         </div>
     </div>
 </div> 
     
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Calendar.js"></script>
+    <script src="../JS/Calendar.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js'></script>
-    <script src="Assistant.js"></script>
+    <script src="../JS/Assistant.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

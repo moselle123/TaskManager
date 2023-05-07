@@ -72,3 +72,10 @@ weeksText.addEventListener('input', () => {
         weeksRange.value = value;
     }
 });
+
+$(document).on('keydown', function ( e ) {
+    if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'i') ) {
+      event.preventDefault();
+      $("#newTaskModal").modal('show');
+    }
+  });

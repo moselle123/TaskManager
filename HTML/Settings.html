@@ -6,7 +6,7 @@
     <title>Settings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="Tasks.css">
+    <link rel="stylesheet" href="../CSS/Tasks.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
 		body {overflow: hidden;}
@@ -17,13 +17,14 @@
         <div class="container">
             <!-- assistant -->
             <div class="d-flex">
-                <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#assistantModal"><img src="assistantLogo.png" alt="My Assistant" height="90rem"></button>
+                <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#assistantModal"><img src="../Images/assistantLogo.png" alt="My Assistant" height="90rem"></button>
                 <div class="ps-2">
                     <h3>MyAssistant</h3>
                     <form>
                         <input id="assistantQ" type="text" placeholder="How can I help?">
                         <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestionHome(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </form>
+                    <p class="fw-bold">Ctrl + A</p>
                 </div>
             </div>
 
@@ -34,22 +35,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Index.html" class="nav-link active"><button class="btn btn-light">Home</button></a></h5>
+                        <a href="Index.html" class="nav-link active"><button class="btn btn-light">Home</button></a>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 500;"><a href="Grades.html" class="nav-link active"><button class="btn btn-light">Grades</button></a></h5>
+                        <a href="Grades.html" class="nav-link active"><button class="btn btn-light">Grades</button></a>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="MindMaps.html" class="nav-link active"><button class="btn btn-light">MindMaps</button></a></h5>
+                        <a href="MindMaps.html" class="nav-link active"><button class="btn btn-light">MindMaps</button></a>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Calendar.html" class="nav-link active"><button class="btn btn-light">Calendar</button></a></h5>
+                        <a href="Calendar.html" class="nav-link active"><button class="btn btn-light">Calendar</button></a>
                     </li>
                     <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="Tasks.html" class="nav-link active"><button class="btn btn-light">Tasks</button></a></h5>
+                        <a href="Tasks.html" class="nav-link active"><button class="btn btn-light">Tasks</button></a>
                     </li>
-                    <li class="nav-item active">
-                        <h5 style="font-weight: 300;"><a href="#" class="nav-link active"><i class="bi bi-person"></i></a></h5>
+                    <li class="nav-item active ms-4 mb-0">
+                        <a href="Login.html" class="nav-link active"><button class="btn btn-light">Sign Out <i class="bi bi-door-open"></i></button></a>
                     </li>
                 </ul>
             </div>
@@ -65,13 +66,18 @@
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bg-body-secondary d-flex flex-column align-items-center p-0 pb-3">
-                    <img src="assistantLogo.png" alt="My Assistant" height="250rem" width="250rem">
+                    <img src="../Images/assistantLogo.png" alt="My Assistant" height="250rem" width="250rem">
                     <div>
                         <input id="modalInput" type="text" placeholder="How can I help?">
                         <button class="btn p-0" type="submit" onclick="assistantQuestionModal(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </div>
-                    <div id="answer" class="border rounded bg-body mt-3 text-center p-3" style="height: 18rem; width: 18rem;">
+                    <div id="answer" class="border rounded bg-body mt-3 text-center p-3 position-relative" style="height: 18rem; width: 18rem;">
+                        <div class="position-absolute m-1 justify-content-center" style="bottom: 0; right: 0;">
+                            <button class="btn p-0"><h1><i class="bi bi-volume-up"></i></h1></button>
+                            <p class="m-0" style="font-size: xx-small;">Read Aloud?</p>
+                        </div>
                     </div>
+                    <p class="mb-0 mt-1">Click assistant symbol to ask questions using the microphone</p>
                 </div>
             </div>
         </div>
@@ -98,7 +104,7 @@
                 </div>
                 <div class="d-flex flex-row justify-content-between align-items-center px-2" style="height: 25%;">
                     <h3>Add Section</h3>
-                    <button class="btn"><i class="bi bi-file-plus"></i></button>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#addSectionModal"><i class="bi bi-file-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -185,10 +191,108 @@
             </div>
         </div>
     </div>
-    <a href="Index.html" class="btn float-end fw-bold me-5 mt-2">Back to Home <i class="bi bi-arrow-right-square ms-2 me-5"></i></a>
+    <a href="Index.html" class="btn float-end fw-bold me-5 mt-2" style="position: absolute; right: 0; bottom: 2em">Back to Home <i class="bi bi-arrow-right-square ms-2 me-5"></i></a>
+
+    <!-- add section modal  -->
+    <div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">Add Section</h3>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-2">
+                        <div>
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#tasks" role="button" aria-expanded="true" aria-controls="expand tasks">+ Tasks</a>
+                        </div>
+                        <div class="collapse show" id="tasks">
+                            <div class="card card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all">
+                                    <label class="form-check-label text-black" for="all">All</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all">
+                                    <label class="form-check-label text-black" for="all">Work</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all" disabled checked>
+                                    <label class="form-check-label text-black" for="all">Assignments</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all">
+                                    <label class="form-check-label text-black" for="all">Personal</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#grades" role="button" aria-expanded="false" aria-controls="expand grades">+ Grades</a>
+                        </div>
+                        <div class="collapse" id="grades">
+                            <div class="card card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="softwareArchitecture">
+                                    <label class="form-check-label text-black" for="softwareArchitecture">Software Architecture</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="scrum">
+                                    <label class="form-check-label text-black" for="scrum">Scrum</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#calendar" role="button" aria-expanded="false" aria-controls="expand calendar">+ Calendar</a>
+                        </div>
+                        <div class="collapse" id="calendar">
+                            <div class="card card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all">
+                                    <label class="form-check-label text-black" for="all">All</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all">
+                                    <label class="form-check-label text-black" for="all">Work</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all">
+                                    <label class="form-check-label text-black" for="all">Assignments</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="all">
+                                    <label class="form-check-label text-black" for="all">Personal</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#extras" role="button" aria-expanded="false" aria-controls="expand extras">+ Extras</a>
+                        </div>
+                        <div class="collapse" id="extras">
+                            <div class="card card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="clock" checked disabled>
+                                    <label class="form-check-label text-black" for="clock">Clock</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="productivityTips">
+                                    <label class="form-check-label text-black" for="productivityTips">Productivity Tips</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="timer">
+                                    <label class="form-check-label text-black" for="timer">Productivity Timer</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="float-end btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="float-end btn btn-primary ms-2" type="button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Assistant.js"></script>
+    <script src="../JS/Assistant.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

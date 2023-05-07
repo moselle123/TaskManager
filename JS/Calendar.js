@@ -1,3 +1,12 @@
+$(document).on('keydown', function ( e ) {
+  if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'i') ) {
+    event.preventDefault();
+    var myButton = document.getElementById("addEvent");
+    myButton.click();
+  }
+});
+
+// localStorage.clear();
 const calendar = document.querySelector(".calendar"),
   date = document.querySelector(".date"),
   daysContainer = document.querySelector(".days"),
@@ -36,9 +45,52 @@ const months = [
   "November",
   "December",
 ];
+function checkInit(){
+  var events = JSON.parse(window.localStorage.getItem("events"));
 
-const eventsArr = [];
+  if (!events) {
+    eventsArr = [
+      {
+        day: 12,
+        month: 05,
+        year: 2023,
+        events: [
+          {
+            title: "UI Lecture",
+            time: "10:00 AM",
+          },
+        ]
+      },
+      {
+        day: 11,
+        month: 05,
+        year: 2023,
+        events: [
+          {
+            title: "Databases Lecture",
+            time: "10:00 AM",
+          },
+        ]
+      },
+      {
+        day: 10,
+        month: 05,
+        year: 2023,
+        events: [
+          {
+            title: "Scrum Lecture",
+            time: "10:00 AM",
+          }
+        ]
+      }
+    ];
+  }
+  else{
+    eventsArr = [];
+  }
+}
 
+checkInit();
 
 getEvents();
 
@@ -284,7 +336,7 @@ addEventTo.addEventListener("input", (e) => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//function to add event to eventsArr
+
 addEventSubmit.addEventListener("click", () => {
   const eventTitle = addEventTitle.value;
   const eventTimeFrom = addEventFrom.value;
@@ -387,10 +439,8 @@ eventsContainer.addEventListener("click", (e) => {
               event.events.splice(index, 1);
             }
           });
-          //if no events left in a day then remove that day from eventsArr
           if (event.events.length === 0) {
             eventsArr.splice(eventsArr.indexOf(event), 1);
-            //remove event class from day
             const activeDayEl = document.querySelector(".day.active");
             if (activeDayEl.classList.contains("event")) {
               activeDayEl.classList.remove("event");
@@ -403,14 +453,11 @@ eventsContainer.addEventListener("click", (e) => {
   }
 });
 
-//function to save events in local storage
 function saveEvents() {
   localStorage.setItem("events", JSON.stringify(eventsArr));
 }
 
-//function to get events from local storage
 function getEvents() {
-  //check if events are already saved in local storage then return event else nothing
   if (localStorage.getItem("events") === null) {
     return;
   }

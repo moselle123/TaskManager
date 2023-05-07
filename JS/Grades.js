@@ -1,4 +1,3 @@
-// localStorage.clear();
 newModule();
 var modulesList = JSON.parse(window.localStorage.getItem("modulesList")) || [
     {
@@ -18,8 +17,11 @@ var modulesList = JSON.parse(window.localStorage.getItem("modulesList")) || [
       url: "Scrum.html"
     }
   ];
+
   //when the page loads add the divs from the information in the modules list
   function loadPage() {
+    var target = document.getElementById("target");
+    target.value = "70"
     var modules = document.getElementById("modules");
     modules.innerHTML = ""; // Clear the modules container
     var fullHTML = "";
@@ -75,3 +77,46 @@ function clickModule(index) {
         window.location.href = modulesList[index].url;
     }
   }
+
+function editAssessment(aname, aweight, aachieved){
+    assessmentName = document.getElementById("assessmentName");
+    weighting = document.getElementById("weighting");
+    achieved = document.getElementById("achieved");
+
+    assessmentName.value = aname;
+    weighting.value = aweight;
+    achieved.value = aachieved;  
+    
+    var myModal = document.getElementById('newAssessmentModal');
+    var modal = new bootstrap.Modal(myModal);
+    modal.show();
+}
+
+function clearInputs(){
+    assessmentName = document.getElementById("assessmentName");
+    weighting = document.getElementById("weighting");
+    achieved = document.getElementById("achieved");
+
+    assessmentName.value = "";
+    weighting.value = "";
+    achieved.value = "";
+
+    var myModal = document.getElementById('newAssessmentModal');
+    var modal = new bootstrap.Modal(myModal);
+    modal.modal(hide);
+ }
+
+$(document).on('keydown', function ( e ) {
+    if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'i') ) {
+    event.preventDefault();
+    $("#newModuleModal").modal('show');
+}
+});
+
+$(document).on('keydown', function ( e ) {
+    if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'i') ) {
+    event.preventDefault();
+    $("#newAssessmentModal").modal('show');
+}
+});
+
