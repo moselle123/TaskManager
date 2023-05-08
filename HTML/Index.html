@@ -88,7 +88,10 @@
 
         <!-- today -->
         <div class="col-1 rounded mx-auto d-flex flex-column shadow position-relative" style="width: 25vw; height: 70vh;">
-            <h1 class="pb-5 p-4 ">Today</h1>
+            <div class="pb-5 p-4 d-flex">
+                <h1>Today</h1>
+                <button class="btn"><h2><i class="bi bi-volume-up"></i></h2></button>
+            </div>
             <div class="row ps-4" style="width: 100%;">
                 <div class="col">
                     <ul class="to-dos list-unstyled" id="todayList">
@@ -100,11 +103,7 @@
                 <button id="addTask" class="btn p-0 pe-3 pb-1" onclick="addTask()"><i class="bi bi-plus-circle"></i></button>
                 <input id="todayInput" type="text">
                 <button class="btn p-0 ps-1 pb-1"><i class="bi bi-mic"></i></button>
-            </div>  
-            <div class="position-absolute m-1 justify-content-center" style="top: 0; right: 0;">
-                <button class="btn p-0"><h1><i class="bi bi-volume-up"></i></h1></button>
-                <p class="m-0" style="font-size: xx-small;">Read Aloud?</p>
-            </div>  
+            </div> 
         </div>
     
     

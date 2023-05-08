@@ -37,7 +37,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="modal-title">Forgotten your Details?</h3>
-                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button class="btn-close" data-bs-dismiss="modal" id="closeForgot" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bg-body-secondary d-flex flex-column p-3 pb-3">
                     <p>Enter your email below so we can send you a verification code:</p>
@@ -50,7 +50,7 @@
                     <label for="code" class="visually-hidden">verification Code</label>
                     <input type="text" class="form-control mb-2" id="verificationCode" placeholder="Verification Code" required autofocus disabled>
                     <div class="mb-2">
-                        <button class="float-end btn btn-primary" id="verificationCodeButton" disabled >Verify</button>
+                        <button class="float-end btn btn-primary" onclick="verify()" id="verificationCodeButton" disabled >Verify</button>
                     </div>
                     <p>Now enter your new password, your new password must include:</p>
                     <ul>
@@ -58,10 +58,10 @@
                         <li>At least one number.</li>
                     </ul>
                     <label for="code" class="visually-hidden">New Password</label>
-                    <input type="text" class="form-control mb-2" id="newPassword" placeholder="New Password" required autofocus disabled>
+                    <input class="form-control mb-2" type="password" id="newPassword" placeholder="New Password" required autofocus disabled>
                     <label for="code" class="visually-hidden">Confirm New Password</label>
-                    <input type="text" class="form-control mb-2" id="confirmNewPassword" placeholder=" Confirm New Password" required autofocus disabled>
-                    <button class="float-end btn btn-primary">Submit</button>
+                    <input class="form-control mb-2" type="password" id="confirmNewPassword" placeholder=" Confirm New Password" required autofocus disabled>
+                    <button class="float-end btn btn-primary" onclick="checkPassword()">Submit</button>
                 </div>
             </div>
         </div>

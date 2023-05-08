@@ -1,5 +1,5 @@
 :root {
-    --primary-clr: #0a1d3c70;
+    --primary-clr: #235781;
   }
 
   *{
@@ -231,9 +231,11 @@
     gap: 5px;
     padding: 0 20px;
     padding-left: 50px;
-    color: #333;
+    color: #ffffff;
     cursor: pointer;
-  }
+    background-color: #235781;
+    border-radius: 5px;
+    }
   /* even event */
   .events .event:nth-child(even) {
     background: transparent;
@@ -244,24 +246,23 @@
     pointer-events: none;
   }
   .events .event .title .event-title {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
   .events .event i {
     color: var(--primary-clr);
     font-size: 0.5rem;
   }
   .events .event .event-time {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
-    color: #878895;
-    margin-left: 15px;
+    color: #ffffff;
     pointer-events: none;
   }
   /* add tick in event after */
   .events .event::after {
     content: "✓";
+    margin-right: 1rem;
     position: absolute;
     top: 50%;
     right: 0;
@@ -298,12 +299,12 @@
   .add-event-wrapper {
     position: absolute;
     bottom: 100px;
-    left: 75%;
-    width: 30%;
+    left: 73.2%;
+    width: 27%;
     max-height: 0;
     overflow: hidden;
     border-radius: 5px;
-    background-color: #f3f5f7;
+    background-color:  #235781;
     transform: translateX(-50%);
     transition: max-height 0.5s ease;
   }
@@ -317,7 +318,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    color: #373c4f;
+    color: #ffffff;
   }
   .add-event-header .close {
     font-size: 1.5rem;
@@ -328,7 +329,7 @@
     color: #333;
   }
   .add-event-header .title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
   .add-event-body {
@@ -374,8 +375,8 @@
     padding: 20px;
   }
   .add-event-footer .add-event-btn {
-    height: 40px;
-    font-size: 1rem;
+    height: 50px;
+    font-size: 1.5rem;
     font-weight: 500;
     outline: none;
     border: none;
@@ -387,7 +388,7 @@
     border: 1px solid var(--primary-clr);
   }
   .add-event-footer .add-event-btn:hover {
-    background-color: transparent;
+    background-color: #ffffffb4;
     color: var(--primary-clr);
   }
   

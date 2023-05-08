@@ -138,29 +138,30 @@
                     <div class="add-event-input">
                         <input type="text" placeholder="Event Name" class="event-name" />
                     </div>
-                    <div class="add-event-input">
+                    <div class="add-event-input my-2">
                         <input type="text" placeholder="Start Time (HH:MM)" class="event-time-from"/>
                     </div>
                     <div class="add-event-input">
                         <input type="text" placeholder="End Time (HH:MM)" class="event-time-to"/>
                     </div>
-                    <div class="d-flex flex-row w-100">
-                        <input type="text" placeholder="Location"/>
+                    <div class="d-flex flex-row justify-content-end mb-2">
+                        <label class="form-check-label me-2 fs-6 text-light" for="allDay">All Day?</label>
+                        <input class="form-check" type="checkbox" name="allDay" id="allDay">
+                    </div>
+                    <div class="d-flex flex-row w-100 mb-2">
+                        <input style="width: 68.5%;" type="text" placeholder="Location (Optional)"/>
                         <button class="btn btn-primary">Find Address</button>
                     </div>
-                    <select disabled>
-                        <option value="Select Address"></option>
-                    </select>
-                    <select>
-                        <option value="Category"></option>
-                        <option value="All"></option>
-                        <option value="Work"></option>
-                        <option value="School"></option>
-                        <option value="Personal"></option>
+                    <select class="form-select" id="category" aria-label="Select Category">
+                        <option selected>Select Category...</option>
+                        <option value="all">All</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="personal">Personal</option>
                     </select>
                 </div>
                 <div class="add-event-footer">
-                    <button class="add-event-btn btn btn-primary">Add Event</button>
+                    <button class="add-event-btn btn">Add Event</button>
                 </div>
             </div>
         </div>

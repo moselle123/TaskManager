@@ -18,8 +18,9 @@ function validate(){
 }
 
 function codeSent(){
-    var verificationCode = document.getElementById("verificationCode").value;
-    var verificationCodeButton = document.getElementById("verificationCodeButton").value;
+    var email = document.getElementById("email").value;
+    var verificationCode = document.getElementById("verificationCode");
+    var verificationCodeButton = document.getElementById("verificationCodeButton");
     
     if (!regexExp.test(email)){
         alert("Please enter a valid email.");
@@ -31,6 +32,37 @@ function codeSent(){
     }
 }
 
+function verify(){
+    var verificationCode = document.getElementById("verificationCode").value;
+    var password = document.getElementById("newPassword");
+    var confirmPassword = document.getElementById("confirmNewPassword");
+
+    if (verificationCode.length == 6){
+        password.disabled = false;
+        confirmPassword.disabled = false;
+    }
+}
+
+function checkPassword(){
+    event.preventDefault();
+    var password = document.getElementById("newPassword").value;
+    var confirmPassword = document.getElementById("confirmNewPassword").value;
+    var hasUppercase = /[A-Z]/.test(password);
+    var hasNumber = /\d/.test(password);
+
+    if (!hasUppercase || !hasNumber){
+        alert("Please ensure your password meets the requirements listed beside the password field.")
+    }
+    else if (password != confirmPassword){
+        alert("The passwords you have entered do not match.");
+    }
+    else{
+        alert("Your password has been successfully changed!")
+        var close = document.getElementById("closeForgot");
+        close.click();
+    }
+}
+
 function signUp(){
     
     var name = document.getElementById("name").value;
@@ -38,9 +70,14 @@ function signUp(){
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
+    var hasUppercase = /[A-Z]/.test(password);
+    var hasNumber = /\d/.test(password);
 
     if (name == "" || username == "" || email == "" || password == "" || confirmPassword == ""){
         alert("Please fill in all fields before submitting the form.");
+    }
+    else if (!hasUppercase || !hasNumber){
+        alert("Please ensure your password meets the requirements listed beside the password field.")
     }
     else if (password != confirmPassword){
         alert("The passwords you have entered do not match.");
