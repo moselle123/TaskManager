@@ -118,9 +118,16 @@
             <div class="border border shadow rounded-circle border-dark bg-warning-subtle" style="height: 7rem; width: 9rem; position: absolute; left: 30%; top: 30%; transform: translate(-50%, -50%);">
                 <p class="text-center" style="position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">Gameplay</p>
             </div>
+            <div class="border border-2 position-absolute" style="height: 7rem; width: 9rem; position: absolute; top: 70%; left: 70%; transform: translate(-50%, -50%);">
+                <div class="bg-black rounded position-absolute" style="height: 0.7rem; width: 0.7rem; top: 0; left: 0;"></div>
+                <div class="bg-black rounded position-absolute" style="height: 0.7rem; width: 0.7rem; top: 0; right: 0;"></div>
+                <div class="bg-black rounded position-absolute" style="height: 0.7rem; width: 0.7rem; bottom: 0; left: 0;"></div>
+                <div class="bg-black rounded position-absolute" style="height: 0.7rem; width: 0.7rem; bottom: 0; right: 0;"></div>
+            </div>
             <div class="border border shadow rounded-circle border-dark bg-success-subtle" style="height: 7rem; width: 9rem; position: absolute; top: 70%; left: 70%; transform: translate(-50%, -50%);">
                 <p class="text-center p-2" style="position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">Double click to add text</p>
             </div>
+            
             
             <!-- mindmap ui -->
             <div style="position: absolute; right: 0; top: 0;">
@@ -129,9 +136,11 @@
             <div class="d-flex" style="position: absolute; bottom: 0; left: 0;">
                 <button class="btn btn-light border rounded-circle" style="height: 5rem; width: 5rem;">
                     <h4 class="text-success"><i class="bi bi-plus-lg"></i></h4>
+                    <p style="font-size: xx-small;">Add Circle</p>
                 </button>
                 <button class="btn btn-light border rounded-circle" style="height: 5rem; width: 5rem;">
                     <h4 class="text-danger"><i class="bi bi-trash-fill"></i></h4>
+                    <p style="font-size: xx-small;">Delete Circle</p>
                 </button>
             </div>
         </div>
@@ -139,7 +148,7 @@
 
     <!-- instructions -->
     <div class="mt-1">
-        <p class="text-center">Drag new circles into the map via the new circle button or drag a line from one circle to the other to connect them.</p>
+        <p class="text-center">Drag new circles into the map via the add circle button or drag a line from one circle to the other to connect them.</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

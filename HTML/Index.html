@@ -21,7 +21,7 @@
                 <div class="ps-2">
                     <h3>MyAssistant</h3>
                     <form>
-                        <input id="assistantQ" type="text" placeholder="How can I help?">
+                        <input id="assistantQ" aria-label="Ask a question to My Assistant" type="text" placeholder="How can I help?">
                         <button class="btn p-0" type="submit" data-bs-toggle="modal" data-bs-target="#assistantModal" onclick="assistantQuestionHome(event)"><i class="bi bi-arrow-right-square"></i></button>
                     </form>
                     <p class="fw-bold">Ctrl + A</p>
@@ -84,7 +84,7 @@
     </div>
 
     <!-- body -->
-    <div class="justify-content-center p-4 m-0 row" style="height: 100vh; width: 100vw;">
+    <div role="main" class="justify-content-center p-4 m-0 row" style="height: 100vh; width: 100vw;">
 
         <!-- today -->
         <div class="col-1 rounded mx-auto d-flex flex-column shadow position-relative" style="width: 25vw; height: 70vh;">
